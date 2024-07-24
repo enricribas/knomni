@@ -35,3 +35,9 @@
 		</div>
 	</div>
 </div>
+<div class="fixed bottom-14 left-14 text-2xl md:text-4xl">
+	<p class="mb-4">Email</p>
+	<div class="input-group input-group-divider grid-cols-[auto_1fr_auto]">
+		<a href="mailto:sales@knomni.com" class="p-3 text-orange-500">sales@knomni.com</a>
+	</div>
+</div>
