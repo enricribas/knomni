@@ -10,81 +10,22 @@
 
 	<body data-sveltekit-preload-data="hover" data-theme="vintage">
 		<div style="display: contents">%sveltekit.body%</div>
-		<script type="module">
-			import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-			Chatbot.init({
-				chatflowid: "0919f243-d0c7-4b4c-aff4-016e0cbe4cd3",
-				apiHost: "https://flowise-production-25b0.up.railway.app",
-				chatflowConfig: {
-					// topK: 2
-				},
-				theme: {
-					button: {
-						backgroundColor: "orange",
-						right: 100,
-						bottom: 100,
-						size: 96, // small | medium | large | number
-						dragAndDrop: true,
-						iconColor: "white",
-						customIconSrc: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg",
-					},
-					tooltip: {
-						showTooltip: true,
-						tooltipMessage: 'Speak with AI?',
-						tooltipBackgroundColor: 'black',
-						tooltipTextColor: 'white',
-						tooltipFontSize: 16,
-					},
-					chatWindow: {
-						showTitle: true,
-						title: 'Flowise Bot',
-						titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
-						showAgentMessages: true,
-						welcomeMessage: 'Hello! This is custom welcome message',
-						errorMessage: 'This is a custom error message',
-						backgroundColor: "#ffffff",
-						height: 700,
-						width: 400,
-						fontSize: 16,
-						poweredByTextColor: "#303235",
-						botMessage: {
-							backgroundColor: "#f7f8ff",
-							textColor: "#303235",
-							showAvatar: true,
-							avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png",
-						},
-						userMessage: {
-							backgroundColor: "#ec891f",
-							textColor: "#ffffff",
-							showAvatar: true,
-							avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png",
-						},
-						textInput: {
-							placeholder: 'Type your question',
-							backgroundColor: '#ffffff',
-							textColor: '#303235',
-							sendButtonColor: '#3B81F6',
-							maxChars: 150,
-							maxCharsWarningMessage: 'You exceeded the characters limit. Please input less than 150 characters.',
-							autoFocus: true, // If not used, autofocus is disabled on mobile and enabled on desktop. true enables it on both, false disables it on both.
-							sendMessageSound: false,
-							// sendSoundLocation: "send_message.mp3", // If this is not used, the default sound effect will be played if sendSoundMessage is true.
-							receiveMessageSound: false,
-							// receiveSoundLocation: "receive_message.mp3", // If this is not used, the default sound effect will be played if receiveSoundMessage is true. 
-						},
-						feedback: {
-							color: '#303235',
-						},
-						footer: {
-							textColor: '#303235',
-							text: 'Powered by',
-							company: 'us',
-							companyLink: 'https://knomni.com',
-						}
-					}
+
+		<script type="text/javascript">
+			(function (d, t) {
+				var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+				v.onload = function () {
+					window.voiceflow.chat.load({
+						verify: { projectID: '66a0fef3fe7738be9c34ac01' },
+						url: 'https://general-runtime.voiceflow.com',
+						versionID: 'production'
+					});
 				}
-			})
+				v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+			})(document, 'script');
 		</script>
+
+
 	</body>
 
 </html>
